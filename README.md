@@ -1,4 +1,3 @@
-<img width="3736" height="541" alt="image" src="https://github.com/user-attachments/assets/0c88c3bc-b7d7-4af6-8a3b-e3c16e0fb422" />
 ## 1. PRD
 
 *Основная роль: SA/PO*  
