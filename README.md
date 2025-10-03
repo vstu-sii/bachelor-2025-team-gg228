@@ -1,4 +1,4 @@
-
+<img width="3736" height="541" alt="image" src="https://github.com/user-attachments/assets/0c88c3bc-b7d7-4af6-8a3b-e3c16e0fb422" />
 ## 1. PRD
 
 *Основная роль: SA/PO*  
@@ -83,7 +83,7 @@
 
 **Use-case UML диаграмма**
 
-<img width="974" height="505" alt="image" src="https://github.com/user-attachments/assets/ea64fe70-cfbd-4c0b-a0cd-37a4b9572dea" />
+<img width="3736" height="541" alt="image" src="https://github.com/user-attachments/assets/d3b3b9fc-4069-4563-8c96-37672da1b30c" />
 
 
 ---
