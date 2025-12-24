@@ -14,9 +14,10 @@ from sqlalchemy.pool import StaticPool
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-BACKEND_DIR = REPO_ROOT / "backend"
-if str(BACKEND_DIR) not in sys.path:
-    sys.path.insert(0, str(BACKEND_DIR))
+BACKEND_DIR = (REPO_ROOT / "backend").resolve()
+# Ensure our backend package is first on sys.path (CI sometimes pre-populates paths).
+sys.path = [p for p in sys.path if Path(p or ".").resolve() != BACKEND_DIR]
+sys.path.insert(0, str(BACKEND_DIR))
 
 # If some dependency imported a different top-level `app` package before we adjust sys.path,
 # force reload from our backend/app package.

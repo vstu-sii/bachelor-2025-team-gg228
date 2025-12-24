@@ -19,6 +19,8 @@ jobs:
         run: |
           ruff check backend/app reranker/app training --select F,E9
       - name: Unit/API tests + coverage
+        env:
+          PYTHONPATH: backend
         run: |
           mkdir -p reports/coverage
           pytest -q tests/api --cov=backend/app --cov-report=term-missing --cov-report=xml:reports/coverage/coverage.xml
