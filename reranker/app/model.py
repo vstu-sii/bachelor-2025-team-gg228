@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 from functools import lru_cache
-from typing import Iterable
 
 import torch
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
@@ -46,4 +45,3 @@ def score_pairs(pairs: list[tuple[str, str]]) -> list[float]:
         probs = torch.softmax(logits, dim=-1)
         # берём вероятность класса "релевантно" = последний класс
         return probs[:, -1].cpu().tolist()
-
