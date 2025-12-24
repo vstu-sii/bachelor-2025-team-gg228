@@ -38,10 +38,10 @@ pnpm-debug.log*
 Thumbs.db
 
 ### Docker runtime data
-volumes/
+/volumes/
 
 ### Large / generated model data
-models/
+/models/
 backend/data/hf/
 backend/data/storage/
 
