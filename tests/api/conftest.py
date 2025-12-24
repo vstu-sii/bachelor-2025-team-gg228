@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from collections.abc import Generator
 from pathlib import Path
+import importlib
 import sys
 
 import pytest
@@ -16,6 +17,13 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 BACKEND_DIR = REPO_ROOT / "backend"
 if str(BACKEND_DIR) not in sys.path:
     sys.path.insert(0, str(BACKEND_DIR))
+
+# If some dependency imported a different top-level `app` package before we adjust sys.path,
+# force reload from our backend/app package.
+importlib.invalidate_caches()
+for name in list(sys.modules.keys()):
+    if name == "app" or name.startswith("app."):
+        sys.modules.pop(name, None)
 
 
 @pytest.fixture
