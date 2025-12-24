@@ -1,0 +1,17 @@
+route:
+  receiver: "default"
+  group_by: ["alertname", "job"]
+  group_wait: 10s
+  group_interval: 1m
+  repeat_interval: 2h
+
+receivers:
+  - name: "default"
+    # По умолчанию — без внешних интеграций (логика в логах Alertmanager).
+    # Для Slack/Telegram можно добавить webhook и раскомментировать нужный блок.
+    #
+    # slack_configs:
+    #   - api_url: "${SLACK_WEBHOOK_URL}"
+    #     channel: "#alerts"
+    #     title: "{{ .CommonAnnotations.summary }}"
+    #     text: "{{ .CommonAnnotations.description }}"

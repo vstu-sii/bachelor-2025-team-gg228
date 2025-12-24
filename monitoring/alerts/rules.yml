@@ -1,0 +1,38 @@
+groups:
+  - name: poisk-istochnikov
+    rules:
+      - alert: BackendDown
+        expr: up{job="backend"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Backend is down"
+          description: "Prometheus cannot scrape backend /metrics for > 1m."
+
+      - alert: HighSearchLatencyP95
+        expr: histogram_quantile(0.95, sum(rate(search_duration_seconds_bucket[5m])) by (le, mode)) > 2.5
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High search latency p95"
+          description: "p95 search latency is > 2.5s for 5m (mode={{ $labels.mode }})."
+
+      - alert: RerankerSlowP95
+        expr: histogram_quantile(0.95, sum(rate(rerank_duration_seconds_bucket[5m])) by (le)) > 1
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Reranker latency p95 high"
+          description: "p95 reranker latency is > 1s for 5m."
+
+      - alert: PostgresExporterDown
+        expr: up{job="postgres"} == 0
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Postgres exporter is down"
+          description: "Prometheus cannot scrape postgres-exporter for > 2m."

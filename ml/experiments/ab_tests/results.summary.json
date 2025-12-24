@@ -1,0 +1,38 @@
+{
+  "total_rows": 120,
+  "summary": [
+    {
+      "variant": "A_overlap_v1",
+      "type": "heuristic_overlap",
+      "accuracy": 1.0,
+      "wins": 120,
+      "total": 120,
+      "errors": 0,
+      "mean_ms": 0.17,
+      "p95_ms": 0.23,
+      "p99_ms": 0.28
+    },
+    {
+      "variant": "B_rubert_tiny2_zero_shot",
+      "type": "crossencoder",
+      "accuracy": 0.1917,
+      "wins": 23,
+      "total": 120,
+      "errors": 0,
+      "mean_ms": 38.71,
+      "p95_ms": 15.56,
+      "p99_ms": 23.99
+    },
+    {
+      "variant": "C_hybrid_v1",
+      "type": "hybrid",
+      "accuracy": 0.9917,
+      "wins": 119,
+      "total": 120,
+      "errors": 0,
+      "mean_ms": 14.55,
+      "p95_ms": 15.4,
+      "p99_ms": 15.79
+    }
+  ]
+}

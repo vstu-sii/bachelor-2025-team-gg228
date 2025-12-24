@@ -1,0 +1,51 @@
+### Secrets
+.env
+.env.*
+!.env.example
+
+### Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+coverage.xml
+reports/coverage/
+
+### Virtualenvs
+.venv/
+venv/
+ENV/
+
+### Node / Vite
+node_modules/
+frontend/node_modules/
+dist/
+frontend/dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+### IDE
+.idea/
+.vscode/
+
+### OS
+.DS_Store
+Thumbs.db
+
+### Docker runtime data
+volumes/
+
+### Large / generated model data
+models/
+backend/data/hf/
+backend/data/storage/
+
+### Keep training dataset in git (everything else in backend/data is ignored)
+backend/data/*
+!backend/data/training/
+!backend/data/training/**
