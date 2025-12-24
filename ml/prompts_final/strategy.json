@@ -1,0 +1,7 @@
+{
+  "selected_variant": "A_overlap_v1",
+  "date": "2025-12-24",
+  "reason": "На текущей выборке (N=120) максимальная pairwise_accuracy при минимальной latency; см. reports/quality-metrics.md.",
+  "notes": "Важно: текущий датасет выглядит очень «лёгким» (высокая лексическая близость positive к query), поэтому результат нельзя напрямую переносить на production; нужен более репрезентативный eval set."
+}
+

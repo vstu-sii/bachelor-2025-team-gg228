@@ -1,0 +1,25 @@
+{
+  "variants": [
+    {
+      "id": "A_overlap_v1",
+      "type": "heuristic_overlap",
+      "notes": "Простая эвристика: Jaccard overlap по токенам запроса/кандидата."
+    },
+    {
+      "id": "B_rubert_tiny2_zero_shot",
+      "type": "crossencoder",
+      "model": "cointegrated/rubert-tiny2",
+      "max_length": 256,
+      "notes": "Cross-encoder на base чекпойнте без дообучения под rerank."
+    },
+    {
+      "id": "C_hybrid_v1",
+      "type": "hybrid",
+      "model": "cointegrated/rubert-tiny2",
+      "max_length": 256,
+      "alpha": 0.8,
+      "notes": "Смешивание: alpha*model + (1-alpha)*overlap."
+    }
+  ]
+}
+
